@@ -1,14 +1,18 @@
 <template>
-  <div class="btn">{{ content }}</div>
+  <div class="btn" v-on:click="clear">{{ content }}</div>
 </template>
 
 <script>
 export default {
-  name: "FunctionButton",
+  name: "ClearScreen",
   props: {
     content: String,
-    actionClick: null
-  }
+  },
+  methods: {
+    clear: function() {
+      this.$emit("clearScreen", "0");
+    },
+  },
 };
 </script>
 

@@ -1,14 +1,19 @@
 <template>
-  <div class="btn">{{ content }}</div>
+  <div class="btn" v-on:click="append">{{ number }}</div>
 </template>
 
 <script>
 export default {
-  name: "NumberButton",
+  name: 'NumberButton',
   props: {
-    content: String,
-    actionClick: null
-  }
+    number: String,
+    actionClick: null,
+  },
+  methods: {
+    append: function() {
+      this.$emit('appendNumber', this.number);
+    },
+  },
 };
 </script>
 

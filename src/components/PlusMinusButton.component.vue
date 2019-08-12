@@ -1,17 +1,16 @@
 <template>
-  <div class="btn" @click="operate">{{ operator }}</div>
+  <div class="btn" v-on:click="negate">{{ content }}</div>
 </template>
 
 <script>
 export default {
-  name: "OperatorButton",
+  name: "PlusMinus",
   props: {
-    operator: String,
-    actionClick: null,
+    content: String,
   },
   methods: {
-    operate: function() {
-      this.$emit("setOperator", this.operator);
+    negate: function() {
+      this.$emit("applyNegative", -1);
     },
   },
 };

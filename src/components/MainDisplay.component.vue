@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div id="aux" class="display display-aux">{{ auxilliary }}display aux</div>
-    <div id="main" class="display display-main">{{ main }} display main</div>
+    <div id="aux" class="display display-aux">{{ auxilliary }}</div>
+    <div id="main" class="display display-main">{{ main }}</div>
   </div>
 </template>
 
@@ -9,14 +9,16 @@
 export default {
   name: "Displays",
   props: {
-    main: String,
-    auxilliary: String
+    main: { type: String, required: true, default: "0" },
+    auxilliary: { type: String, required: true, default: "0" }
   }
 };
 </script>
 
 <style scoped>
 .container {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 2fr 3fr;

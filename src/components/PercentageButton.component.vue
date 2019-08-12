@@ -1,17 +1,16 @@
 <template>
-  <div class="btn" @click="operate">{{ operator }}</div>
+  <div class="btn" v-on:click="findPercentage">{{ content }}</div>
 </template>
 
 <script>
 export default {
-  name: "OperatorButton",
+  name: "PercentageButton",
   props: {
-    operator: String,
-    actionClick: null,
+    content: String,
   },
   methods: {
-    operate: function() {
-      this.$emit("setOperator", this.operator);
+    findPercentage: function() {
+      this.$emit("applyPercentage", 100);
     },
   },
 };

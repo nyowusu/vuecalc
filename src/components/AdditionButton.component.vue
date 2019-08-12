@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "OperatorButton",
+  name: "AdditionButton",
   props: {
     operator: String,
     actionClick: null,
